@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-theme="graphite" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0f">
+<title>NexusPeople — People & Admin</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="login"><div class="logincard"><div class="brand" style="padding:0 0 14px"><div class="logo">N</div><div><b>NEXUS SUITE</b><small>Demo sign-in</small></div></div>
+<input id="login-email" placeholder="Email" value="admin@teamnexus.app">
+<input id="login-pass" type="password" placeholder="Password">
+<div id="login-err"></div>
+<button class="btn primary" style="width:100%" onclick="nexusLogin()">Sign in</button>
+<p class="muted" style="font-size:11px;margin-top:12px">Demo credentials: <b>admin@teamnexus.app</b> / <b>Nexus@2026</b></p></div></div>
+
+<div class="app">
+<aside class="side">
+ <div class="brand"><div class="logo">N</div><div><b>NEXUSPEOPLE</b><small>Dedicated Workspace</small></div></div>
+ <div class="workspace"><b>Ahana Trading</b><small>Bangladesh · Enterprise</small></div>
+ <div class="navlabel">Workspace</div>
+ <nav class="nav">
+  <button class="active" data-page="home"><i class="ico">◉</i><span>Overview</span></button>
+  <button data-page="employees"><i class="ico">◎</i><span>Employees</span></button>
+  <button data-page="attendance"><i class="ico">◷</i><span>Attendance</span></button>
+  <button data-page="leave"><i class="ico">☂</i><span>Leave & shifts</span></button>
+  <button data-page="payroll"><i class="ico">৳</i><span>Payroll</span></button>
+  <button data-page="performance"><i class="ico">↗</i><span>Performance</span></button>
+  <button data-page="recruitment"><i class="ico">✉</i><span>Recruitment</span></button>
+  <button data-page="approvals"><i class="ico">✓</i><span>Approvals</span></button>
+ </nav>
+ <div class="navlabel">System</div>
+ <nav class="nav">
+  <button data-page="settings"><i class="ico">⚙</i><span>Settings</span></button>
+  <button data-toast="Help & docs opened"><i class="ico">◉</i><span>Help & docs</span></button>
+ </nav>
+</aside>
+<main class="main">
+<header class="top"><div class="crumb" id="crumb">People & Admin</div><div class="search">⌕ &nbsp; Search or use <kbd>⌘ K</kbd></div><div class="actions"><button class="icon" onclick="openAI()">✦</button><button class="icon" data-toast="No new notifications">♢</button><button class="icon" onclick="toggleMode()">◐</button></div></header>
+<section class="content">
+<div id="home" class="page active">
+<div class="hero"><div><h1>People & Administration</h1><p>One operating layer for people, payroll, attendance, approvals and company administration.</p></div><div class="actions"><button class="btn" data-toast="Export started">Export</button><button class="btn primary" data-toast="Employee form opened">＋ Add employee</button></div></div>
+<div class="grid kpis">
+<div class="card kpi"><small>Active workforce</small><div class="metric">284</div><div class="trend">+8 this quarter</div></div>
+<div class="card kpi"><small>Attendance today</small><div class="metric">96.8%</div><div class="trend">↑ 1.2% vs last month</div></div>
+<div class="card kpi"><small>Payroll this month</small><div class="metric">৳8.42M</div><div class="trend">On track · 3 days to close</div></div>
+<div class="card kpi"><small>Pending approvals</small><div class="metric">17</div><div class="trend warn">6 need attention</div></div></div>
+<div class="grid split">
+<div class="card"><div class="head"><h3>Workforce overview</h3><button class="btn" data-toast="Showing this month">This month</button></div><div class="chart"><svg viewBox="0 0 800 220" preserveAspectRatio="none"><g stroke="var(--line)"><line x1="0" y1="35" x2="800" y2="35"/><line x1="0" y1="100" x2="800" y2="100"/><line x1="0" y1="165" x2="800" y2="165"/></g><path d="M0 170 C80 150 110 160 180 125 S280 145 350 105 S450 125 520 83 S650 105 800 48" fill="none" stroke="var(--accent)" stroke-width="4"/><path d="M0 190 C90 185 140 190 220 165 S330 178 420 148 S560 165 650 130 S730 138 800 115" fill="none" stroke="var(--accent2)" stroke-width="2"/></svg></div></div>
+<div class="card ai"><div class="head"><h3>People intelligence</h3><span class="pill">Local AI</span></div><div class="body"><p class="muted">Three signals worth reviewing today.</p><div class="insight"><strong>Overtime</strong><br>Warehouse operations are 14% above normal overtime this week.</div><div class="insight"><strong>Retention</strong><br>Four high-performing employees show declining engagement signals.</div><div class="insight"><strong>Attendance</strong><br>Friday absenteeism is trending 8% higher in one team.</div></div></div></div>
+<div class="grid modules" style="margin-top:12px">
+<div class="card module"><div class="ico">◉</div><h3>Employee 360</h3><p>Profiles, contracts, documents, compensation, skills, assets and activity.</p><button class="btn" data-toast="Employee 360 directory opened">Open directory →</button></div>
+<div class="card module"><div class="ico">◷</div><h3>Attendance & shifts</h3><p>Live attendance, shift planning, leave, overtime and exceptions.</p><button class="btn" data-toast="Workforce board opened">Open workforce →</button></div>
+<div class="card module"><div class="ico">৳</div><h3>Payroll & benefits</h3><p>Payroll runs, allowances, deductions, loans and approval trails.</p><button class="btn" data-toast="Payroll opened">Open payroll →</button></div>
+</div>
+<div class="card" style="margin-top:12px"><div class="head"><h3>Approval inbox</h3><span class="pill warn">17 pending</span></div><div class="tablewrap"><table class="table"><tr><th>Request</th><th>Employee</th><th>Department</th><th>Age</th><th>Status</th></tr><tr><td><b>Leave · 2 days</b></td><td>Mahin Rahman</td><td>Sales</td><td>2h</td><td><span class="pill warn">Review</span></td></tr><tr><td><b>Expense · ৳18,400</b></td><td>Nusrat Jahan</td><td>Operations</td><td>4h</td><td><span class="pill warn">Review</span></td></tr></table></div></div>
+</div>
+<div id="generated" class="page"></div>
+</section></main></div>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeAI()"><div class="drawerpanel"><div class="drawerhead"><div><div class="muted" style="font-size:10px;text-transform:uppercase;letter-spacing:.1em">Local intelligence</div><h2>People Copilot</h2></div><button class="icon" onclick="closeAI()">×</button></div><p class="muted">Private, context-aware assistance over people, payroll, attendance and administration.</p><div class="aiinput" style="margin-top:20px"><input id="q" placeholder="Ask: “Who is overdue for review?”"><button class="send" onclick="answer()">↑</button></div><div id="answer" class="airesponse">Try asking about attendance trends, payroll variance, approval ageing or retention signals.</div><div class="insight" style="margin-top:18px"><b>Suggested</b>“Which teams are trending above overtime this month?”</div><div class="insight"><b>Suggested</b>“Show employees whose engagement signals declined.”</div></div></div>
+
+<script src="js/auth.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
